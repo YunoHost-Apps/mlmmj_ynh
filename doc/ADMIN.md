@@ -6,8 +6,8 @@ However, not all settings are available in this interface. It is possible to twe
 
 You can also run the various `mlmmj` commands from the CLI, such as
 
-- **List subscribers**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-list -L __INSTALL_DIR__/list`
-- **Add a subscriber**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-sub -L __INSTALL_DIR__/list -a sasha@domain.tld`
-- **Remove a subscriber**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-unsub -L __INSTALL_DIR__/list -a sasha@domain.tld`
+- **List subscribers**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-list -L __INSTALL_DIR__/list`
+- **Add a subscriber**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-sub -L __INSTALL_DIR__/list -a sasha@domain.tld`
+- **Remove a subscriber**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-unsub -L __INSTALL_DIR__/list -a sasha@domain.tld`
 
 More info about those commands can be obtained by adding the `-h` flag.
