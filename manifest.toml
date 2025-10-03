@@ -6,7 +6,7 @@ id = "mlmmj"
 name = "Mailing List Manager"
 description.en = "Simple and efficient mailing list manager"
 description.fr = "Gestionnaire de liste de diffusion simple et efficace"
-version = "1.4.7~ynh1"
+version = "1.4.7~ynh2"
 maintainers = ["Raph"]
 
 [upstream]

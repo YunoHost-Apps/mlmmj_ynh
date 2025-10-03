@@ -138,7 +138,7 @@ EOF
     touch "$install_dir/tables/transport"
     touch "$install_dir/tables/virtual"
 
-    local transport_entry="$app@localhost.mlmmj       mlmmj:$app"
+    local transport_entry="$app@localhost.mlmmj       $app:$app"
     local virtual_entry="$list_email    $app@localhost.mlmmj"
 
     if ! grep -qF "$transport_entry" "$install_dir/tables/transport"; then
