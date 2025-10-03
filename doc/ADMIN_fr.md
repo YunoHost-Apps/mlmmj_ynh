@@ -6,8 +6,8 @@ Cependant, tous les paramètres ne sont pas disponibles depuis cette interface. 
 
 Il est également possible de gérer la liste depuis la ligne de commande de `mlmmj`, comme par exemple:
 
-- **Lister les abonné·e·s**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-list -L __INSTALL_DIR__/list`
-- **Ajouter un abonnement**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-sub -L __INSTALL_DIR__/list -a sasha@domain.tld`
-- **Supprimer un abonnement**: `sudo -u mlmmj -- __INSTALL_DIR__/app/bin/mlmmj-unsub -L __INSTALL_DIR__/list -a sasha@domain.tld`
+- **Lister les abonné·e·s**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-list -L __INSTALL_DIR__/list`
+- **Ajouter un abonnement**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-sub -L __INSTALL_DIR__/list -a sasha@domain.tld`
+- **Supprimer un abonnement**: `sudo -u __APP__ -- __INSTALL_DIR__/app/bin/mlmmj-unsub -L __INSTALL_DIR__/list -a sasha@domain.tld`
 
 Plus d'informations sur ces commandes peuvent être obtenuers en ajoutant l'option `-h`.
