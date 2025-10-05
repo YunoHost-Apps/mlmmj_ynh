@@ -154,13 +154,13 @@ set__prefix() {
 
 set__add_subscribers() {
     while IFS= read -r email; do
-        ynh_exec_as_app -- "$install_dir"/app/bin/mlmmj-sub -L $install_dir/list -a $email -c -s -U
+        ynh_exec_as_app "$install_dir"/app/bin/mlmmj-sub -L $install_dir/list -a $email -c -s -U
     done <<< "$add_subscribers"
 }
 
 set__del_subscribers() {
     while IFS= read -r email; do
-        ynh_exec_as_app -- "$install_dir"/app/bin/mlmmj-unsub -L $install_dir/list -a $email -c -N -s
+        ynh_exec_as_app "$install_dir"/app/bin/mlmmj-unsub -L $install_dir/list -a $email -c -N -s
     done <<< "$del_subscribers"
 }
 
