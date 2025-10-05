@@ -54,7 +54,7 @@ ram.runtime = "50M"
 
 [resources]
   [resources.sources.main]
-  url = "https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_1_6_0/mlmmj-1.6.0.tar.xz"
+  url = "https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_1.6.0/mlmmj-1.6.0.tar.xz"
   sha256 = "5442cb9d46b925593831743668f47a0b44c1c8a6bd6dc80ba582f435369a3b4a"
   format = "tar.xz"
   in_subdir = true
