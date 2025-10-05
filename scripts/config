@@ -119,15 +119,18 @@ set__notifysub() {
 }
 
 set__submod() {
-    if [[ $submod == 1 ]]; then
-        if [[ -n "$submod_list" ]]; then
-            echo "$submod_list" > "$install_dir/list/control/submod"
-        else
-            echo "" > "$install_dir/list/control/submod"
-        fi
-    else
-        ynh_safe_rm "$install_dir/list/control/submod"
-    fi
+
+#    if [[ $submod == 1 ]]; then
+#        if [[ -n "$submod_list" ]]; then
+#            echo "$submod_list" > "$install_dir/list/control/submod"
+#        else
+#            echo "" > "$install_dir/list/control/submod"
+#        fi
+#    else
+#        ynh_safe_rm "$install_dir/list/control/submod"
+#    fi
+
+    set_flag "submod" "$submod"
 }
 
 # Moderation
