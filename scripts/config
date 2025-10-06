@@ -105,11 +105,11 @@ get__subscribers_list() {
 # General
 
 set__sub_policy() {
-    set_3choices "open" "closedlistsub" "closedlist" # "$list_status"
+    set_3choices "open" "closedlistsub" "closedlist" "$sub_policy"
 }
 
 set__post_policy() {
-    set_3choices "all" "subonlypost" "modonlypost" # "$post_policy"
+    set_3choices "all" "subonlypost" "modonlypost" "$post_policy"
 }
 
 # Owners
