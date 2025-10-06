@@ -242,7 +242,7 @@ set_flag() {
     local flag_value="$2"
 
     if [[ $flag_value == 1 ]]; then
-        touch "$install_dir/list/control/$flag_name"
+        ynh_exec_as_app touch "$install_dir/list/control/$flag_name"
         #ynh_print_info "'Created $install_dir/list/control/$flag_name'"
     else
         ynh_safe_rm "$install_dir/list/control/$flag_name"
@@ -277,12 +277,12 @@ set_3choices() {
             ;;
 
         "$choice2_file")
-            touch "$install_dir/list/control/$choice2_file"
+            ynh_exec_as_app touch "$install_dir/list/control/$choice2_file"
             ynh_safe_rm "$install_dir/list/control/$choice3_file"
             ;;
 
         "$choice3_file")
-            touch "$install_dir/list/control/$choice3_file"
+            ynh_exec_as_app touch "$install_dir/list/control/$choice3_file"
             ynh_safe_rm "$install_dir/list/control/$choice2_file"
             ;;
     esac
