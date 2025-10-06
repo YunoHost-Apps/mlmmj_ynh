@@ -105,7 +105,7 @@ get__subscribers_list() {
 # General
 
 set__sub_policy() {
-    set_3choices "open" "closedlistsub" "closedlist" "$list_status"
+    set_3choices "open" "closedlistsub" "closedlist" "$sub_policy"
 }
 
 set__post_policy() {
@@ -119,15 +119,18 @@ set__notifysub() {
 }
 
 set__submod() {
-    if [[ $submod == 1 ]]; then
-        if [[ -n "$submod_list" ]]; then
-            echo "$submod_list" > "$install_dir/list/control/submod"
-        else
-            echo "" > "$install_dir/list/control/submod"
-        fi
-    else
-        ynh_safe_rm "$install_dir/list/control/submod"
-    fi
+
+#    if [[ $submod == 1 ]]; then
+#        if [[ -n "$submod_list" ]]; then
+#            echo "$submod_list" > "$install_dir/list/control/submod"
+#        else
+#            echo "" > "$install_dir/list/control/submod"
+#        fi
+#    else
+#        ynh_safe_rm "$install_dir/list/control/submod"
+#    fi
+
+    set_flag "submod" "$submod"
 }
 
 # Moderation
@@ -154,13 +157,13 @@ set__prefix() {
 
 set__add_subscribers() {
     while IFS= read -r email; do
-        ynh_exec_as_app -- "$install_dir"/app/bin/mlmmj-sub -L $install_dir/list -a $email -c -s -U
+        ynh_exec_as_app "$install_dir"/app/bin/mlmmj-sub -L $install_dir/list -a $email -c -s -U
     done <<< "$add_subscribers"
 }
 
 set__del_subscribers() {
     while IFS= read -r email; do
-        ynh_exec_as_app -- "$install_dir"/app/bin/mlmmj-unsub -L $install_dir/list -a $email -c -N -s
+        ynh_exec_as_app "$install_dir"/app/bin/mlmmj-unsub -L $install_dir/list -a $email -c -N -s
     done <<< "$del_subscribers"
 }
 
@@ -239,7 +242,7 @@ set_flag() {
     local flag_value="$2"
 
     if [[ $flag_value == 1 ]]; then
-        touch "$install_dir/list/control/$flag_name"
+        ynh_exec_as_app touch "$install_dir/list/control/$flag_name"
         #ynh_print_info "'Created $install_dir/list/control/$flag_name'"
     else
         ynh_safe_rm "$install_dir/list/control/$flag_name"
@@ -262,25 +265,25 @@ get_3choices() {
 }
 
 set_3choices() {
-    local choice1_file="$1"
+    local choice1="$1"
     local choice2_file="$2"
-    local choice3="$3"
+    local choice3_file="$3"
     local config_value="$4"
 
     case $config_value in
-        "$choice3")
-            ynh_safe_rm "$install_dir/list/control/$choice1_file"
+        "$choice1")
             ynh_safe_rm "$install_dir/list/control/$choice2_file"
-            ;;
-
-        "$choice1_file")
-            touch "$install_dir/list/control/$choice1_file"
-            ynh_safe_rm "$install_dir/list/control/$choice2_file"
+            ynh_safe_rm "$install_dir/list/control/$choice3_file"
             ;;
 
         "$choice2_file")
-            touch "$install_dir/list/control/$choice2_file"
-            ynh_safe_rm "$install_dir/list/control/$choice1_file"
+            ynh_exec_as_app touch "$install_dir/list/control/$choice2_file"
+            ynh_safe_rm "$install_dir/list/control/$choice3_file"
+            ;;
+
+        "$choice3_file")
+            ynh_exec_as_app touch "$install_dir/list/control/$choice3_file"
+            ynh_safe_rm "$install_dir/list/control/$choice2_file"
             ;;
     esac
 }
