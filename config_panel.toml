@@ -24,7 +24,6 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         choices.open = "Anyone can subscribe or unsubscribe by email"
         choices.closedlistsub = "Restrict new subscriptions"
         choices.closedlist = "Restricts both new subscriptions and unsubscriptions"
-        default = "open"
 
         [main.general.post_policy]
         ask.en = "Posting policy"
@@ -33,7 +32,6 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         choices.all = "Anyone can post"
         choices.subonlypost = "Only people subscribed to the list can post"
         choices.modonlypost = "Only moderators can post"
-        default = "all"
 
     [main.owners]
     name.en = "Owners"
