@@ -265,25 +265,25 @@ get_3choices() {
 }
 
 set_3choices() {
-    local choice1_file="$1"
+    local choice1="$1"
     local choice2_file="$2"
-    local choice3="$3"
+    local choice3_file="$3"
     local config_value="$4"
 
     case $config_value in
-        "$choice3")
-            ynh_safe_rm "$install_dir/list/control/$choice1_file"
+        "$choice1")
             ynh_safe_rm "$install_dir/list/control/$choice2_file"
-            ;;
-
-        "$choice1_file")
-            touch "$install_dir/list/control/$choice1_file"
-            ynh_safe_rm "$install_dir/list/control/$choice2_file"
+            ynh_safe_rm "$install_dir/list/control/$choice3_file"
             ;;
 
         "$choice2_file")
             touch "$install_dir/list/control/$choice2_file"
-            ynh_safe_rm "$install_dir/list/control/$choice1_file"
+            ynh_safe_rm "$install_dir/list/control/$choice3_file"
+            ;;
+
+        "$choice3_file")
+            touch "$install_dir/list/control/$choice3_file"
+            ynh_safe_rm "$install_dir/list/control/$choice2_file"
             ;;
     esac
 }
