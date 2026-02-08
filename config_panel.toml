@@ -12,7 +12,7 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
     name.fr = "Général"
 
         [main.general.listaddress]
-        ask.en = "List adress"
+        ask.en = "List address"
         ask.fr = "Adresse de la liste"
         readonly = true
         type = "text"
@@ -21,6 +21,7 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         ask.en = "Subscription policy"
         ask.fr = "Politique d'abonnement"
         type = "select"
+        help = "Tunables: `closedlistsub` & `closedlist`"
         choices.open = "Anyone can subscribe or unsubscribe by email"
         choices.closedlistsub = "Restrict new subscriptions"
         choices.closedlist = "Restricts both new subscriptions and unsubscriptions"
@@ -29,6 +30,7 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         ask.en = "Posting policy"
         ask.fr = "Politique d'envoi de messages"
         type = "select"
+        help = "Tunables: `subonlypost` & `modonlypost`"
         choices.all = "Anyone can post"
         choices.subonlypost = "Only people subscribed to the list can post"
         choices.modonlypost = "Only moderators can post"
@@ -40,8 +42,7 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         [main.owners.owner]
         ask.en = "List owners (one email per line)"
         ask.fr = "Propriétaires de la liste (un email par ligne)"
-        help.en = "Technical setting name: `owner`"
-        help.fr = "Nom technique du paramètre : `owner`"
+        help = "Tunables: `owner`"
         optional = true
         type = "text"
         bind = "__INSTALL_DIR__/list/control/owner"
@@ -49,15 +50,13 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         [main.owners.notifysub]
         ask.en = "Notify owners about subcriptions/unsubscribtions to the list?"
         ask.fr = "Notifier les propriétaires des abonnements/désabonnements à la liste"
-        help.en = "Technical setting name: `notifysub`"
-        help.fr = "Nom technique du paramètre : `notifysub`"
+        help = "Tunables: `notifysub`"
         type = "boolean"
 
         [main.owners.submod]
         ask.en = "Subscriptions to the list must be validated by owners"
         ask.fr = "Faire valider les inscriptions à la liste par les propriétaires"
-        help.en = "Technical setting name: `submod`"
-        help.fr = "Nom technique du paramètre : `submod`"
+        help = "Tunables: `submod`"
         type = "boolean"
 
     [main.moderation]
@@ -67,15 +66,13 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         [main.moderation.moderated]
         ask.en = "Enable moderation"
         ask.fr = "Activer la modération"
-        help.en = "Technical setting name: `moderated`"
-        help.fr = "Nom technique du paramètre : `moderated`"
+        help = "Tunables: `moderated`"
         type = "boolean"
 
         [main.moderation.moderators]
         ask.en = "List moderators (one email per line)"
         ask.fr = "Modérateur·ice·s de la liste (une adresse courriel par ligne)"
-        help.en = "Technical setting name: `moderators`"
-        help.fr = "Nom technique du paramètre : `moderators`"
+        help = "Tunables: `moderators`"
         type = "text"
         bind = "__INSTALL_DIR__/list/control/moderators"
         visible = "moderated == true"
@@ -83,16 +80,14 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         [main.moderation.modnonsubposts]
         ask.en = "Send posts to moderation if they are from unauthorized people (instead of simply denying them)"
         ask.fr = "Faire valider les messages par les modérateur·ice·s si ils provinnent de personnes non autorisées à poster (plutôt qu de simplement refuser les messages)"
-        help.en = "Technical setting name: `modnonsubposts`"
-        help.fr = "Nom technique du paramètre : `modnonsubposts`"
+        help = "Tunables: `modnonsubposts`"
         type = "boolean"
         visible = "moderated == true"
 
         [main.moderation.notifymod]
         ask.en = "Notify authors that their post is pending moderation"
         ask.fr = "Notifier les personnes lorsque leur message est en attente de modération"
-        help.en = "Technical setting name: `notifymod`"
-        help.fr = "Nom technique du paramètre : `notifymod`"
+        help = "Tunables: `notifymod`"
         type = "boolean"
         visible = "moderated == true"
 
@@ -103,15 +98,13 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
         [main.mail.prefix]
         ask.en = "Prefix for the Subject line of emails"
         ask.fr = "Préfixe pour la ligne d'objet des emails"
-        help.en = "Technical setting name: `prefix`"
-        help.fr = "Nom technique du paramètre : `prefix`"
+        help = "Tunables: `prefix`"
         type = "string"
 
         [main.mail.footer]
         ask.en = "Footer content"
         ask.fr = "Contenu du pied de page"
-        help.en = "Technical setting name: `footer`"
-        help.fr = "Nom technique du paramètre : `footer`"
+        help = "Tunables: `footer`"
         type = "text"
         bind = "__INSTALL_DIR__/list/control/footer"
 
@@ -120,14 +113,14 @@ help.fr = "Il s’agit d’une interface de gestion simplifiée. Pour des option
     name.fr = "Abonné·e·s"
 
         [main.subscribers.add_subscribers]
-        help.en = "A welcome email will be sent to added addresses."
+        help.en = "A welcome email will be sent to each new address."
         help.fr = "Un courriel de bienvenue sera envoyé aux adresses ajoutées."
         ask.en = "Add addresses to the standard subscribers category (one per line)"
         ask.fr = "Ajouter des adresses à la catégorie subscribers (une par ligne)"
         type = "text"
 
         [main.subscribers.del_subscribers]
-        help.en = "A goodbye email will be sent to the removed addresses."
+        help.en = "A goodbye email will be sent to each removed address."
         help.fr = "Un courriel d’au revoir sera envoyé aux adresses supprimées."
         ask.en = "Remove addresses from the list (one per line)"
         ask.fr = "Retirer des adresses de la liste (une par ligne)"
