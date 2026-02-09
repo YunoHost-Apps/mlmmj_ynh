@@ -56,10 +56,10 @@ ram.runtime = "50M"
   [resources.sources.main]
   url = "https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_1_7_0/mlmmj-1.7.0.tar.xz"
   sha256 = "13b5a90f1cdc0c1d0dfc4e99a1202ded4c26888534515710a4469489a5a1b9ac"
-  format = "tar.xz"
-  in_subdir = true
+  #format = "tar.xz"
+  #in_subdir = true
   autoupdate.strategy = "latest_forgejo_release"
-  autoupdate.asset = "^mlmmj-.*tar.xz$"
+  #autoupdate.asset = "^mlmmj-.*tar.xz$"
         
     [resources.system_user]
     
