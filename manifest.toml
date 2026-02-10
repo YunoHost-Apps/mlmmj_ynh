@@ -59,7 +59,8 @@ ram.runtime = "50M"
   #format = "tar.xz"
   #in_subdir = true
   autoupdate.strategy = "latest_forgejo_release"
-  #autoupdate.asset = "^mlmmj-.*tar.xz$"
+  autoupdate.version_regex = "^RELEASE_(.*)$"
+  autoupdate.asset = "^mlmmj-.*tar.xz$"
         
     [resources.system_user]
     
