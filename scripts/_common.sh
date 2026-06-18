@@ -10,7 +10,6 @@ install_update_mlmmj() {
     chown -R $app:$app "$install_dir/src"
     chown -R $app:$app "$install_dir/app"
     pushd "$install_dir/src"
-        ynh_exec_and_print_stderr_only_if_error ynh_exec_as_app autoreconf -i
         ynh_exec_and_print_stderr_only_if_error ynh_exec_as_app ./configure  --prefix="$install_dir/app" --disable-tests
         ynh_exec_and_print_stderr_only_if_error ynh_exec_as_app make
         ynh_exec_and_print_stderr_only_if_error ynh_exec_as_app make install
