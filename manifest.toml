@@ -6,7 +6,7 @@ id = "mlmmj"
 name = "Mailing List Manager"
 description.en = "Simple and efficient mailing list manager"
 description.fr = "Gestionnaire de liste de diffusion simple et efficace"
-version = "2.2.2~ynh1"
+version = "2.2.3~ynh1"
 maintainers = ["Raph"]
 
 [upstream]
@@ -55,8 +55,8 @@ ram.runtime = "50M"
 [resources]
 
     [resources.sources.main]
-    url = "https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_2_2_2/mlmmj-2.2.2.tar.xz"
-    sha256 = "d3845e4b7e9976c50cf4db7351c562cc70e3d9cc24368a671f6b61deb6291e49"
+    url = "https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_2_2_3/mlmmj-2.2.3.tar.xz"
+    sha256 = "e34f54bccf665adf8e3156223a851f9c7dc8bae28646066ab4cebd813acaf018"
     autoupdate.strategy = "latest_forgejo_release"
     autoupdate.version_regex = "^RELEASE_(\\d+)_(\\d+)_(\\d+)$"
     autoupdate.asset = "mlmmj-.*\\.tar\\.xz"
